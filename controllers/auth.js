@@ -25,6 +25,10 @@ const authController = {
             failureFlash: true
         })
         return loginStrategy (req, res)
+    },
+    logOut: (req, res) => {
+        req.logOut()
+        res.redirect('/')
     }
 }
 

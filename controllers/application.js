@@ -1,6 +1,6 @@
 const applicationController = {
     index: (req, res) => {
-        res.send('Hello from application index!')
+        res.render('app/index')
         
     }
 }

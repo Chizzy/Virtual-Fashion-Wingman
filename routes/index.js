@@ -13,6 +13,7 @@ router.post('/signup', authController.createUser)
 router.get('/login', authController.logIn)
 router.post('/login', authController.checkUser)
 
+router.get('/logout', authController.logOut)
 
 
 module.exports = router

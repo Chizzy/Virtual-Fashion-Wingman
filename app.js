@@ -28,12 +28,12 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+require('./config/passport')(passport);
+
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
   next();
-})
-
-require('./config/passport')(passport)
+});
 
 app.use('/', routes);
 
