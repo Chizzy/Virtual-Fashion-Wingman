@@ -18,6 +18,14 @@ const authController = {
     logIn: (req, res) => {
         res.render('login', {message: req.flash('loginMessage')})
     },
+    checkUser: (req, res) => {
+        const loginStrategy = passport.authenticate('local-login', {
+            successRedirect: '/',
+            failureRedirect: '/login',
+            failureFlash: true
+        })
+        return loginStrategy (req, res)
+    }
 }
 
 module.exports = authController

@@ -11,6 +11,7 @@ router.get('/signup', authController.signUp)
 router.post('/signup', authController.createUser)
 
 router.get('/login', authController.logIn)
+router.post('/login', authController.checkUser)
 
 
 
