@@ -10,6 +10,8 @@ const passportConfig = (passport) => {
     }
 
     const localSignupCallback = (req, email, password, callback) => {
+
+        // UserHelp signup
         UserHelp.findOne({'local.email': email}).then((userHelp) => {
             if (userHelp) {
                 return callback (null, false, req.flash('signupMessage', 'This email is already in use.'))
@@ -23,7 +25,7 @@ const passportConfig = (passport) => {
             }
         })
 
-
+        // UserStylist signup
         UserStylist.findOne({'local.email': email}).then((userStylist) => {
             if (userStylist) {
                 return callback (null, false, req.flash('signupMessage', 'This email is already in use.'))
@@ -39,6 +41,18 @@ const passportConfig = (passport) => {
     }
 
     passport.use('local-signup', new LocalStrategy(strategyFields, localSignupCallback))
+
+    passport.serializeUser(function (user, callback) {
+        callback(null, user.id)
+    })
+     passport.deserializeUser(function (id, callback) {
+         UserHelp.findById(id, function(err, user) {
+             callback(err, user)
+         })
+         UserStylist.findById(id, function(err, user) {
+             callback(err, user)
+         })
+     })
 }
 
 module.exports = passportConfig
