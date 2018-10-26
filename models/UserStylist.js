@@ -11,15 +11,16 @@ const UserStylist = new Schema ({
         lowercase: true,
         required: true
     },
-    img: {
+    password: {
         type: String,
         required: true
     },
+    img: String,
     location: String,
     style: String,
     about: String,
     feedbacks: [{
-        type: Schema.Types.Feedback,
+        type: Schema.Types.ObjectId,
         ref: 'Feedback'
     }]
 })

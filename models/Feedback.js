@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Feedback = new Schema ({
     comment: String,
     stylist: {
-        type: Schema.Types.UserStylist,
+        type: Schema.Types.ObjectId,
         ref: 'UserStylist'
     },
     date: {

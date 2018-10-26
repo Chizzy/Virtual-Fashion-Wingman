@@ -6,6 +6,10 @@ const UserHelp = new Schema ({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         lowercase: true,
@@ -13,7 +17,7 @@ const UserHelp = new Schema ({
     },
     img: String,
     posts: [{
-        type: Schema.Types.Post,
+        type: Schema.Types.ObjectId,
         ref: 'Post'
     }]
 })

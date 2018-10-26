@@ -40,7 +40,35 @@ const passportConfig = (passport) => {
         })
     }
 
+
     passport.use('local-signup', new LocalStrategy(strategyFields, localSignupCallback))
+
+    const localLoginCallback = (req, email, password, callback) => {
+
+        // UserHelp login
+        UserHelp.findOne({'local.email': email}).then((userHelp) => {
+            if (!userHelp) {
+                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
+            }
+            if (!userHelp.validPassword(password)) {
+                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
+            }
+            return callback (null, userHelp)
+        })
+
+        // UserStylist login
+        UserStylist.findOne({'local.email': email}).then((userStylist) => {
+            if (!userStylist) {
+                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
+            }
+            if (!userStylist.validPassword(password)) {
+                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
+            }
+            return callback (null, userStylist)
+        })
+    }
+
+    passport.use('local-login', new LocalStrategy(strategyFields, localLoginCallback))
 
     passport.serializeUser(function (user, callback) {
         callback(null, user.id)
