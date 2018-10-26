@@ -24,7 +24,18 @@ const passportConfig = (passport) => {
         })
 
 
-    
+        UserStylist.findOne({'local.email': email}).then((userStylist) => {
+            if (userStylist) {
+                return callback (null, false, req.flash('signupMessage', 'This email is already in use.'))
+            } else {
+                const newUserStylist = new UserStylist()
+                newUserStylist.local.email = email
+                newUserStylist.local.password = password
+                newUserStylist.save().then((saved) => {
+                    return callback (null, saved)
+                })
+            }
+        })
     }
 
     passport.use('local-signup', new LocalStrategy(strategyFields, localSignupCallback))
