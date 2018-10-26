@@ -14,7 +14,10 @@ const authController = {
             failureFlash: true
         })
         return signupStrategy (req, res)
-    }
+    },
+    logIn: (req, res) => {
+        res.render('login', {message: req.flash('loginMessage')})
+    },
 }
 
 module.exports = authController
