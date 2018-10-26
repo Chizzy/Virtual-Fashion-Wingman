@@ -24,4 +24,8 @@ const UserStylist = new Schema ({
     }]
 })
 
+UserStylist.methods.encrypt = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
+}
+
 module.exports = mongoose.model('UserStylist', UserStylist)

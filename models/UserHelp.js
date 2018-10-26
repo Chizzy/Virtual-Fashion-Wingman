@@ -18,4 +18,9 @@ const UserHelp = new Schema ({
     }]
 })
 
+UserHelp.methods.encrypt = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
+}
+
+
 module.exports = mongoose.model('UserHelp', UserHelp)
