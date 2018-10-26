@@ -18,7 +18,7 @@ const UserStylist = new Schema ({
     location: String,
     style: String,
     about: String,
-    feedback: [{
+    feedbacks: [{
         type: Schema.Types.Feedback,
         ref: 'Feedback'
     }]
