@@ -6,13 +6,13 @@ const UserHelp = new Schema ({
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         lowercase: true,
+        required: true
+    },
+    password: {
+        type: String,
         required: true
     },
     img: String,

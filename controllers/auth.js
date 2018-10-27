@@ -5,23 +5,23 @@ const authController = {
         if (req.isAuthenticated()) {
             res.redirect('/')
         }
-        res.render('signup', {message: req.flash('signupMessage')})
+        res.render('app/signup', {message: req.flash('signupMessage')})
     },
     createUser: (req, res) => {
         const signupStrategy = passport.authenticate('local-signup', {
             successRedirect: '/',
-            failureRedirect: '/signup',
+            failureRedirect: 'app/signup',
             failureFlash: true
         })
         return signupStrategy (req, res)
     },
     logIn: (req, res) => {
-        res.render('login', {message: req.flash('loginMessage')})
+        res.render('app/login', {message: req.flash('loginMessage')})
     },
     checkUser: (req, res) => {
         const loginStrategy = passport.authenticate('local-login', {
             successRedirect: '/',
-            failureRedirect: '/login',
+            failureRedirect: 'app/login',
             failureFlash: true
         })
         return loginStrategy (req, res)
