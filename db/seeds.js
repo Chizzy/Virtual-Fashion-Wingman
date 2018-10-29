@@ -4,6 +4,7 @@ const Post = require('../models/Post')
 const Feedback = require('../models/Feedback')
 
 UserHelp.create({
+    type: 'Seeking Style Advice',
     name: 'Johnny Depp',
     email: 'johnny-depp@gmail.com',
     password: 'ineedhelp',
@@ -29,6 +30,7 @@ UserHelp.create({
 })
 
 UserHelp.create({
+    type: 'Seeking Style Advice',
     name: 'Nicki Minaj',
     email: 'nickiminaj@gmail.com',
     password: 'pinkfriday',
@@ -56,6 +58,7 @@ UserHelp.create({
 
 
 UserStylist.create({
+    type: 'Stylist',
     name: 'Janelle Monae',
     email: 'janellemonae@gmail.com',
     password: 'theelectriclady',
@@ -82,6 +85,7 @@ UserStylist.create({
 })
 
 UserStylist.create({
+    type: 'Stylist',
     name: 'Rami Malek',
     email: 'rami-malek@gmail.com',
     password: 'icanbemercury',
