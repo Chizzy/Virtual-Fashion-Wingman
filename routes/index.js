@@ -5,6 +5,7 @@ const applicationController = require('../controllers/application')
 const authController = require('../controllers/auth')
 const userHelpController = require('../controllers/userHelp')
 const postController = require('../controllers/post')
+const userStylistController = require('../controllers/userStylist')
 
 /* GET home page. */
 router.get('/', applicationController.index)
@@ -33,5 +34,7 @@ router.get('/userHelp/:id/posts/:id/edit', postController.edit)
 router.put('/userHelp/:id/posts/:id', postController.update)
 router.patch('/userHelp/:id/posts/:id', postController.update)
 router.delete('/userHelp/:id/posts/:id', postController.delete)
+
+router.get('/userStylist/new', userStylistController.new)
 
 module.exports = router
