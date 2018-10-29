@@ -6,6 +6,7 @@ const authController = require('../controllers/auth')
 const userHelpController = require('../controllers/userHelp')
 const postController = require('../controllers/post')
 const userStylistController = require('../controllers/userStylist')
+const feedbackController = require('../controllers/feedback')
 
 /* GET home page. */
 router.get('/', applicationController.index)
@@ -42,5 +43,7 @@ router.get('/userStylist/:id/edit', userStylistController.edit)
 router.patch('/userStylist/:id', userStylistController.update)
 router.put('/userStylist/:id', userStylistController.update)
 router.delete('/userStylist/:id', userStylistController.delete)
+
+router.get('/userStylist/:id/feedbacks', feedbackController.index)
 
 module.exports = router
