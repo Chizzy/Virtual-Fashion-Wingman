@@ -7,6 +7,9 @@ const feedbackController = {
     },
     new: (req, res) => {
         res.send('Waz hannin from Feedback new!')
+    },
+    show: (req, res) => {
+        res.send('Waz hannin from Feedback show!')
     }
 }
 
