@@ -32,5 +32,6 @@ router.post('/userHelp/:id/posts',  postController.create)
 router.get('/userHelp/:id/posts/:id/edit', postController.edit)
 router.put('/userHelp/:id/posts/:id', postController.update)
 router.patch('/userHelp/:id/posts/:id', postController.update)
+router.delete('/userHelp/:id/posts/:id', postController.delete)
 
 module.exports = router

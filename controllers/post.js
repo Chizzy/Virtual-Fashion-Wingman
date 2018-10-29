@@ -19,6 +19,9 @@ const postController = {
     },
     update: (req, res) => {
         res.send('Waz hannin from Post update!')
+    },
+    delete: (req, res) => {
+        res.send('Waz hannin from Post delete!')
     }
 }
 
