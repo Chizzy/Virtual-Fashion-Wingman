@@ -10,6 +10,9 @@ const feedbackController = {
     },
     show: (req, res) => {
         res.send('Waz hannin from Feedback show!')
+    },
+    create: (req, res) => {
+        res.send('Waz hannin from Feedback create!')
     }
 }
 
