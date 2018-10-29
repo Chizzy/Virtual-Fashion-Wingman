@@ -4,6 +4,7 @@ const router = express.Router()
 const applicationController = require('../controllers/application')
 const authController = require('../controllers/auth')
 const userHelpController = require('../controllers/userHelp')
+const postController = require('../controllers/post')
 
 /* GET home page. */
 router.get('/', applicationController.index)
@@ -24,6 +25,7 @@ router.put('/userHelp/:id', userHelpController.update)
 router.patch('/userHelp/:id', userHelpController.update)
 router.delete('/userHelp/:id', userHelpController.delete)
 
+router.get('/userHelp/:id/posts', postController.index)
 
 
 module.exports = router

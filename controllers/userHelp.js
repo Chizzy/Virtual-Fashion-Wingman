@@ -1,4 +1,5 @@
 const UserHelp = require('../models/UserHelp')
+const Post = require('../models/Post')
 
 const userHelpController = {
     new: (req, res) => {
