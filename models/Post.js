@@ -7,12 +7,8 @@ const Post = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'UserHelp'
     }, 
-    outfit: String,
-    feedback: {
-        type: Schema.Types.ObjectId,
-        ref: 'Feedback'
-    },
-    date: {
+    content: String,
+    createdAt: {
         type: Date,
         default: Date.now()
     }

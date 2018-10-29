@@ -7,7 +7,7 @@ const Feedback = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'UserStylist'
     },
-    date: {
+    createdAt: {
         type: Date,
         default: Date.now()
     }
