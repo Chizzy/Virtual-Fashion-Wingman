@@ -38,5 +38,6 @@ router.delete('/userHelp/:id/posts/:id', postController.delete)
 router.get('/userStylist/new', userStylistController.new)
 router.get('/userStylist/:id', userStylistController.show)
 router.post('/userStylist', userStylistController.create)
+router.get('/userStylist/:id/edit', userStylistController.edit)
 
 module.exports = router

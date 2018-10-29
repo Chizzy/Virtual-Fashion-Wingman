@@ -10,6 +10,9 @@ const userStylistController = {
     },
     create: (req, res) => {
         res.send('Waz hannin from UserStylist create!')
+    },
+    edit: (req, res) => {
+        res.send('Waz hannin from UserStylist edit!')
     }
 }
 
