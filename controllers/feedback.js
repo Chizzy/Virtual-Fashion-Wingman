@@ -13,6 +13,9 @@ const feedbackController = {
     },
     create: (req, res) => {
         res.send('Waz hannin from Feedback create!')
+    },
+    edit: (req, res) => {
+        res.send('Waz hannin from Feedback edit!')
     }
 }
 
