@@ -12,6 +12,12 @@ const userHelpController = {
     },
     edit: (req, res) => {
         res.send('Waz hannin from UserHelp edit!')
+    },
+    update: (req, res) => {
+        res.send('Waz hannin from UserHelp update!')
+    },
+    delete: (req, res) => {
+        res.send('Waz hannin from UserHelp delete!')
     }
 }
 
