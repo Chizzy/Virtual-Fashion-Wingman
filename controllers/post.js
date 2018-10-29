@@ -8,7 +8,9 @@ const postController = {
     new: (req, res) => {
         res.send('Waz hannin from Post new!')
     },
-    
+    show: (req, res) => {
+        res.send('Waz hannin from Post show!')
+    }
 }
 
 module.exports = postController
