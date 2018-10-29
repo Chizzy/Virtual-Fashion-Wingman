@@ -49,5 +49,7 @@ router.get('/userStylist/:id/feedbacks/new', feedbackController.new)
 router.get('/userStylist/:id/feedbacks/:id', feedbackController.show)
 router.post('/userStylist/:id/feedbacks', feedbackController.create)
 router.get('/userStylist/:id/feedbacks/:id/edit', feedbackController.edit)
+router.patch('/userStylist/:id/feedbacks/:id', feedbackController.update)
+router.put('/userStylist/:id/feedbacks/:id', feedbackController.update)
 
 module.exports = router

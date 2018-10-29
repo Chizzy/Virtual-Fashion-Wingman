@@ -16,6 +16,9 @@ const feedbackController = {
     },
     edit: (req, res) => {
         res.send('Waz hannin from Feedback edit!')
+    },
+    update: (req, res) => {
+        res.send('Waz hannin from Feedback update!')
     }
 }
 
