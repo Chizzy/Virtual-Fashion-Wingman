@@ -36,5 +36,6 @@ router.patch('/userHelp/:id/posts/:id', postController.update)
 router.delete('/userHelp/:id/posts/:id', postController.delete)
 
 router.get('/userStylist/new', userStylistController.new)
+router.get('/userStylist/:id', userStylistController.show)
 
 module.exports = router
