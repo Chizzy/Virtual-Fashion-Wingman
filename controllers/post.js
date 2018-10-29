@@ -13,6 +13,9 @@ const postController = {
     },
     create: (req, res) => {
         res.send('Waz hannin from Post create!')
+    },
+    edit: (req, res) => {
+        res.send('Waz hannin from Post edit!')
     }
 }
 

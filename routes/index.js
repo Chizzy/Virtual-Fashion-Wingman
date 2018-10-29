@@ -29,5 +29,6 @@ router.get('/userHelp/:id/posts', postController.index)
 router.get('/userHelp/:id/posts/new', postController.new)
 router.get('/userHelp/:id/posts/:id', postController.show)
 router.post('/userHelp/:id/posts',  postController.create)
+router.get('/userHelp/:id/posts/:id/edit', postController.edit)
 
 module.exports = router
