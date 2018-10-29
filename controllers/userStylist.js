@@ -13,6 +13,9 @@ const userStylistController = {
     },
     edit: (req, res) => {
         res.send('Waz hannin from UserStylist edit!')
+    },
+    update: (req, res) => {
+        res.send('Waz hanninn from UserStylist update!')
     }
 }
 

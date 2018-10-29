@@ -39,5 +39,7 @@ router.get('/userStylist/new', userStylistController.new)
 router.get('/userStylist/:id', userStylistController.show)
 router.post('/userStylist', userStylistController.create)
 router.get('/userStylist/:id/edit', userStylistController.edit)
+router.patch('/userStylist/:id', userStylistController.update)
+router.put('/userStylist/:id', userStylistController.update)
 
 module.exports = router
