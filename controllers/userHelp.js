@@ -9,6 +9,9 @@ const userHelpController = {
     },
     create: (req, res) => {
         res.send('Waz hannin from UserHelp create!')
+    },
+    edit: (req, res) => {
+        res.send('Waz hannin from UserHelp edit!')
     }
 }
 

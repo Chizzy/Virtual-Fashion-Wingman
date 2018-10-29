@@ -19,6 +19,7 @@ router.get('/logout', authController.logOut)
 router.get('/userHelp/new', userHelpController.new)
 router.get('/userHelp/:id', userHelpController.show)
 router.post('/userHelp', userHelpController.create)
+router.get('/userHelp/:id/edit', userHelpController.edit)
 
 
 module.exports = router
