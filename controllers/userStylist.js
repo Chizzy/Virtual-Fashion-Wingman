@@ -7,6 +7,9 @@ const userStylistController = {
     },
     show: (req, res) => {
         res.send('Waz hannin from UserStylist show!')
+    },
+    create: (req, res) => {
+        res.send('Waz hannin from UserStylist create!')
     }
 }
 
