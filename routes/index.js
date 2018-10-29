@@ -28,5 +28,6 @@ router.delete('/userHelp/:id', userHelpController.delete)
 router.get('/userHelp/:id/posts', postController.index)
 router.get('/userHelp/:id/posts/new', postController.new)
 router.get('/userHelp/:id/posts/:id', postController.show)
+router.post('/userHelp/:id/posts',  postController.create)
 
 module.exports = router
