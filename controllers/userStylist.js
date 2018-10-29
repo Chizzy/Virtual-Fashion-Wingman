@@ -15,7 +15,10 @@ const userStylistController = {
         res.send('Waz hannin from UserStylist edit!')
     },
     update: (req, res) => {
-        res.send('Waz hanninn from UserStylist update!')
+        res.send('Waz hannin from UserStylist update!')
+    },
+    delete: (req, res) => {
+        res.send('Waz hannin from UserStylist delete!')
     }
 }
 

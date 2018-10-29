@@ -41,5 +41,6 @@ router.post('/userStylist', userStylistController.create)
 router.get('/userStylist/:id/edit', userStylistController.edit)
 router.patch('/userStylist/:id', userStylistController.update)
 router.put('/userStylist/:id', userStylistController.update)
+router.delete('/userStylist/:id', userStylistController.delete)
 
 module.exports = router
