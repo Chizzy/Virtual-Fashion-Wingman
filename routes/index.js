@@ -30,5 +30,7 @@ router.get('/userHelp/:id/posts/new', postController.new)
 router.get('/userHelp/:id/posts/:id', postController.show)
 router.post('/userHelp/:id/posts',  postController.create)
 router.get('/userHelp/:id/posts/:id/edit', postController.edit)
+router.put('/userHelp/:id/posts/:id', postController.update)
+router.patch('/userHelp/:id/posts/:id', postController.update)
 
 module.exports = router
