@@ -26,6 +26,6 @@ router.patch('/userHelp/:id', userHelpController.update)
 router.delete('/userHelp/:id', userHelpController.delete)
 
 router.get('/userHelp/:id/posts', postController.index)
-
+router.get('/userHelp/:id/posts/new', postController.new)
 
 module.exports = router
