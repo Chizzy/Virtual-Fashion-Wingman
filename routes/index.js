@@ -45,5 +45,6 @@ router.put('/userStylist/:id', userStylistController.update)
 router.delete('/userStylist/:id', userStylistController.delete)
 
 router.get('/userStylist/:id/feedbacks', feedbackController.index)
+router.get('/userStylist/:id/feedbacks/new', feedbackController.new)
 
 module.exports = router
