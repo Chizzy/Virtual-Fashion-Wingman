@@ -3,7 +3,7 @@ const Post = require('../models/Post')
 
 const userHelpController = {
     new: (req, res) => {
-        res.send('Waz hannin from UserHelp new!')
+        res.render('userHelp/new')
     },
     show: (req, res) => {
         res.send('Waz hannin from UserHelp show!')
