@@ -8,7 +8,7 @@ const passportConfig = (passport) => {
         passwordField: 'password',
         passReqToCallback: true
     }
-    passport.use('local-signup', new LocalStrategy(strategyFields,  function(req, email, password, callback)  {
+    passport.use('local-signup', new LocalStrategy(strategyFields, function (req, email, password, callback) {
         console.log("IN LOCAL SIGNUP")
         User.findOne({
                 'email': email
@@ -34,8 +34,7 @@ const passportConfig = (passport) => {
             .catch((err) => {
                 console.log(err)
             })
-    }
-))
+    }))
 
     const localLoginCallback = (req, email, password, callback) => {
         User.findOne({

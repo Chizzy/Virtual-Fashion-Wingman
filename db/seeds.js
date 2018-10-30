@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt-nodejs')
 const User = require('../models/User')
 const Post = require('../models/Post')
 const Feedback = require('../models/Feedback')
@@ -26,7 +27,7 @@ const johnny = new User ({
     type: 'Seeking Style Advice',
     name: 'Johnny Depp',
     email: 'johnny-depp@gmail.com',
-    password: 'ineedhelp',
+    password: bcrypt.hashSync('ineedhelp'),
     img: 'http://images5.fanpop.com/image/photos/31700000/Johnny-johnny-depp-31730685-400-400.jpg',
     posts: [johnnyPost1, johnnyPost2]
 })
@@ -35,7 +36,7 @@ const nicki = new User ({
     type: 'Seeking Style Advice',
     name: 'Nicki Minaj',
     email: 'nickiminaj@gmail.com',
-    password: 'pinkfriday',
+    password: bcrypt.hashSync('pinkfriday'),
     img: 'https://i.pinimg.com/originals/13/d1/8b/13d18b5fa88ec83506dd15c0abbb7545.jpg',
     posts: [nickiPost1, nickiPost2]
 })
@@ -60,7 +61,7 @@ const janelle = new User ({
     type: 'Stylist',
     name: 'Janelle Monae',
     email: 'janelle.monae@gmail.com',
-    password: 'theelectriclady',
+    password: bcrypt.hashSync('theelectriclady'),
     img: 'https://miscellaneous-content.s3.amazonaws.com/uploads/bfa/23504/2824359/thumb_23504_2824359.jpg',
     location: 'Atlanta, GA',
     about: 'Keytar listicle ugh drinking vinegar, umami gentrify pok pok plaid man bun flannel mlkshk air plant PBR&B. Farm-to-table meh authentic, microdosing iPhone tumeric la croix.',
@@ -71,7 +72,7 @@ const rami = new User ({
     type: 'Stylist',
     name: 'Rami Malek',
     email: 'rami_malek@gmail.com',
-    password: 'iammercury',
+    password: bcrypt.hashSync('iammercury'),
     img: 'https://66.media.tumblr.com/849f1e4f962dc1c625d23d0cf3c5ec0f/tumblr_oe764dci371tumicto1_400.png',
     location: 'Los Angeles, CA',
     about: 'Migas cred next level letterpress poke YOLO post-ironic brunch. Vegan copper mug hella everyday carry. Semiotics quinoa paleo readymade selfies cronut vegan tumblr salvia blog.',
