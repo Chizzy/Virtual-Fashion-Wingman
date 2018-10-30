@@ -5,7 +5,7 @@ const Post = new Schema ({
     img: String,
     creator: {
         type: Schema.Types.ObjectId,
-        ref: 'UserHelp'
+        ref: 'User'
     }, 
     content: String,
     createdAt: {

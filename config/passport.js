@@ -1,6 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy
-const UserHelp = require('../models/UserHelp')
-const UserStylist = require('../models/UserStylist')
+const User = require('../models/User')
 
 const passportConfig = (passport) => {
     const strategyFields = {
@@ -10,30 +9,14 @@ const passportConfig = (passport) => {
     }
 
     const localSignupCallback = (req, email, password, callback) => {
-
-        // UserHelp signup
-        UserHelp.findOne({'local.email': email}).then((userHelp) => {
-            if (userHelp) {
+        User.findOne({'local.email': email}).then((user) => {
+            if (user) {
                 return callback (null, false, req.flash('signupMessage', 'This email is already in use.'))
             } else {
-                const newUserHelp = new UserHelp()
-                newUserHelp.local.email = email
-                newUserHelp.local.password = newUserHelp.encrypt(password)
-                newUserHelp.save().then((saved) => {
-                    return callback (null, saved)
-                })
-            }
-        })
-
-        // UserStylist signup
-        UserStylist.findOne({'local.email': email}).then((userStylist) => {
-            if (userStylist) {
-                return callback (null, false, req.flash('signupMessage', 'This email is already in use.'))
-            } else {
-                const newUserStylist = new UserStylist()
-                newUserStylist.local.email = email
-                newUserStylist.local.password = password
-                newUserStylist.save().then((saved) => {
+                const newUser = new User()
+                newUser.local.email = email
+                newUser.local.password = newUser.encrypt(password)
+                newUser.save().then((saved) => {
                     return callback (null, saved)
                 })
             }
@@ -44,27 +27,14 @@ const passportConfig = (passport) => {
     passport.use('local-signup', new LocalStrategy(strategyFields, localSignupCallback))
 
     const localLoginCallback = (req, email, password, callback) => {
-
-        // UserHelp login
-        UserHelp.findOne({'local.email': email}).then((userHelp) => {
-            if (!userHelp) {
+        User.findOne({'local.email': email}).then((user) => {
+            if (!user) {
                 return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
             }
-            if (!userHelp.validPassword(password)) {
+            if (!user.validPassword(password)) {
                 return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
             }
-            return callback (null, userHelp)
-        })
-
-        // UserStylist login
-        UserStylist.findOne({'local.email': email}).then((userStylist) => {
-            if (!userStylist) {
-                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
-            }
-            if (!userStylist.validPassword(password)) {
-                return callback (null, false, req.flash('loginMessage', 'Username or Password not found. Please try again.'))
-            }
-            return callback (null, userStylist)
+            return callback (null, user)
         })
     }
 
@@ -74,10 +44,7 @@ const passportConfig = (passport) => {
         callback(null, user.id)
     })
      passport.deserializeUser(function (id, callback) {
-         UserHelp.findById(id, function(err, user) {
-             callback(err, user)
-         })
-         UserStylist.findById(id, function(err, user) {
+         User.findById(id, function(err, user) {
              callback(err, user)
          })
      })

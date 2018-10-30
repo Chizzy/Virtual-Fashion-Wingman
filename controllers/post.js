@@ -1,4 +1,4 @@
-const UserHelp = require('../models/UserHelp')
+const User = require('../models/User')
 const Post = require('../models/Post')
 
 const postController = {

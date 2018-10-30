@@ -1,4 +1,4 @@
-const UserStylist = require('../models/UserStylist')
+const User = require('../models/User')
 const Feedback = require('../models/Feedback')
 
 const feedbackController = {

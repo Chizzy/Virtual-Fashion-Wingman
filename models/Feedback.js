@@ -5,7 +5,7 @@ const Feedback = new Schema ({
     comment: String,
     stylist: {
         type: Schema.Types.ObjectId,
-        ref: 'UserStylist'
+        ref: 'User'
     },
     createdAt: {
         type: Date,

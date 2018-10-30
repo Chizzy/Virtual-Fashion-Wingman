@@ -22,13 +22,13 @@
       <legend class="col-form-label col-sm-2 pt-0">Type of User:</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="stylistRadio" value="stylist" checked>
+          <input class="form-check-input" type="radio" name="typeRadios" id="stylistRadio" value="stylist" {{bind-attr checked="help"}}>
           <label class="form-check-label" for="stylistRadio">
             Stylist
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="helpRadio" value="help">
+          <input class="form-check-input" type="radio" name="typeRadios" id="helpRadio" value="help" {{bind-attr checked="stylist"}}>
           <label class="form-check-label" for="helpRadio">
             Seeking Style Advice
           </label>

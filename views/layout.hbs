@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Virtual Style Wingman</title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
-    <link rel='stylesheet' href="/stylesheets/style.css"/>
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
+
+<head>
+  <title>Virtual Style Wingman</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel='stylesheet' href="/stylesheets/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -23,10 +25,10 @@
       <div class="collapse navbar-collapse" id="user-menu">
         <ul class="nav navbar-nav">
           {{#if currentUser}}
-           <li><a href="/logout">Logout {{currentUser.local.email}}</a></li>
+          <li><a href="/logout">LogOut {{currentUser.local.email}}</a></li>
           {{else}}
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">LogIn</a></li>
+          <li><a href="/signup">SignUp</a></li>
           {{/if}}
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -36,5 +38,8 @@
   <main class="container">
     {{{body}}}
   </main>
-  </body>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
 </html>
