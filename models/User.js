@@ -1,4 +1,5 @@
 const mongoose = require('../db/connection')
+const bcrypt = require('bcrypt-nodejs')
 const Schema = mongoose.Schema
 
 const User = new Schema ({
@@ -34,7 +35,7 @@ User.methods.encrypt = function(password) {
 }
 
 User.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password)
+    return bcrypt.compareSync(password, this.password)
 }
     
  module.exports = mongoose.model('User', User)

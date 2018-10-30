@@ -18,9 +18,7 @@ router.post('/login', authController.checkUser)
 
 router.get('/logout', authController.logOut)
 
-router.get('/user/new', userController.new)
 router.get('/user/:id', userController.show)
-router.post('/user', userController.create)
 router.get('/user/:id/edit', userController.edit)
 router.put('/user/:id', userController.update)
 router.patch('/user/:id', userController.update)
