@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   background: -webkit-linear-gradient(left, black, pink);
+  margin: auto;
 }
 
 .home-img {

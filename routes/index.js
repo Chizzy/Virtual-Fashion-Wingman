@@ -33,7 +33,7 @@ router.put('/posts/:id', postController.update)
 router.patch('/posts/:id', postController.update)
 router.delete('/posts/:id', postController.delete)
 
-router.get('/user/:id/feedbacks/:id', feedbackController.show)
+router.get('/feedback/:id', feedbackController.show)
 router.post('/feedbacks', feedbackController.create)
 router.delete('/user/:id/feedbacks/:id', feedbackController.delete)
 
