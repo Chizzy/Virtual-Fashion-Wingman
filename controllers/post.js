@@ -25,11 +25,12 @@ const postController = {
             creator: req.user._id,
             content: req.body.content
         }).then((newPost) => {
-            res.redirect(`/posts/${newPost._id}`)
+            User.findById(newPost.creator).then((creator) => {
+                creator.posts.push(newPost)
+                creator.save()
+                res.redirect(`/posts/${newPost._id}`)
+            })
         })
-        // .then((newPost) => {
-        //     User.posts.push(newPost)
-        // })
     },
     edit: (req, res) => {
         Post.findById(req.params.id).then((post) => {
