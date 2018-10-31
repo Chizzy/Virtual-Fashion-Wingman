@@ -1,0 +1,77 @@
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{{currentUser.img}}" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        {{currentUser.name}}
+                    </h5>
+                    <h6>
+                        {{currentUser.type}}
+                    </h6>
+
+                    {{#if currentUser.feedbacks}}
+                    <p class="proile-rating">Location: <span>{{currentUser.location}}</span></p>
+                    <ul class="nav profile-about">
+                        <li class="nav-item">
+                            About
+                        </li>
+                        <li>
+                            {{currentUser.about}}
+                        </li>
+                    </ul>
+                    {{else}}
+                    {{/if}}
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a href="/user/{{currentUser._id}}/edit" class='btn btn-secondary'>Edit Profile</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+
+                {{#if user.posts}}
+                {{#each user.posts}}
+                <div class="card" style="width: 18rem;">
+                    <h5 class="card-title" href="/post/{{id}}">Post</h5>
+                    <img class="card-img-top" src="{{img}}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{content}}</p>
+                        <a href="#" class="btn btn-secondary">Edit</a>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+
+
+                {{#if user.feedbacks}}
+                {{#each user.feedbacks}}
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title" href="/feedback/{{id}}">Feedback</h5>
+                        <p class="card-text text-justify">{{comment}}</p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+
+            </div>
+        </div>
+    </form>
+
+    <form action="/user/{{user._id}}?_method=DELETE" method="POST">
+        <button class="btn btn-secondary" type="submit">DELETE MY PROFILE</button>
+    </form>
+</div>
