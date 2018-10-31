@@ -13,7 +13,11 @@ const postController = {
         res.render('post/new')
     },
     show: (req, res) => {
-        res.send('Waz hannin from Post show!')
+        Post.findById(req.params.id).then((post) => {
+            res.render('post/show', {
+                post: post
+            })
+        })
     },
     create: (req, res) => {
         Post.create({
@@ -23,15 +27,26 @@ const postController = {
         }).then((newPost) => {
             res.redirect(`/posts/${newPost._id}`)
         })
+        // .then((newPost) => {
+        //     User.posts.push(newPost)
+        // })
     },
     edit: (req, res) => {
-        res.send('Waz hannin from Post edit!')
+        Post.findById(req.params.id).then((post) => {
+            res.render('post/edit', {
+                post: post
+            })
+        })
     },
     update: (req, res) => {
-        res.send('Waz hannin from Post update!')
+        Post.findByIdAndUpdate(req.params.id, req.body).then((updatedPost) => {
+            res.redirect(`/posts/${updatedPost._id}`)
+        })
     },
     delete: (req, res) => {
-        res.send('Waz hannin from Post delete!')
+        Post.findByIdAndRemove(req.params.id).then(() => {
+            res.redirect('/')
+        })
     }
 }
 

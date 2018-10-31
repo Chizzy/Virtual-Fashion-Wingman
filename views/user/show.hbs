@@ -4,10 +4,6 @@
             <div class="col-md-4">
                 <div class="profile-img">
                     <img src="{{currentUser.img}}" alt="" />
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                        <input type="file" name="file" />
-                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -44,11 +40,11 @@
                 {{#if user.posts}}
                 {{#each user.posts}}
                 <div class="card" style="width: 18rem;">
-                    <h5 class="card-title" href="/post/{{id}}">Post</h5>
+                    <h5 class="card-title"><a href="/posts/{{id}}">Post</a></h5>
                     <img class="card-img-top" src="{{img}}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">{{content}}</p>
-                        <a href="#" class="btn btn-secondary">Edit</a>
+                        <a href="/posts/{{id}}/edit" class="btn btn-secondary">Edit</a>
                     </div>
                 </div>
                 {{/each}}
@@ -72,6 +68,6 @@
     </form>
 
     <form action="/user/{{user._id}}?_method=DELETE" method="POST">
-        <button class="btn btn-outline-danger" type="submit">DELETE MY PROFILE</button>
+        <button class="btn btn-outline-danger" type="submit">DELETE PROFILE</button>
     </form>
 </div>

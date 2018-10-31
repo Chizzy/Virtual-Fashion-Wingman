@@ -3,6 +3,14 @@ body {
   background: -webkit-linear-gradient(left, black, pink);
 }
 
+.home-img {
+  height: 75%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 #logo {
   font-family: 'Bungee Inline', cursive;
 }
@@ -120,4 +128,3 @@ a {
   font-weight: 600;
   color: pink;
 }
-

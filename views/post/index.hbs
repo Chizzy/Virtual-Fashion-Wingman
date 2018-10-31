@@ -8,6 +8,25 @@
             <p class="card-text">{{content}}</p>
         </div>
     </div>
+
+
+    <form action="/feedbacks" method="POST" id="feedbackForm">
+        <div class="form-group row">
+            <label for="feedback" class="col-sm-2 col-form-label">Feedback:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="comment" placeholder="Leave Feedback">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Leave Feedback</button>
+    </form>
+
     {{/each}}
 </div>
+{{/if}}
+
+{{#if currentUser}}
+<h3>
+    {{feed}}
+</h3>
+
 {{/if}}
