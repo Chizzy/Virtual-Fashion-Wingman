@@ -1,0 +1,13 @@
+{{#if posts}}
+<div class="posts">
+    {{#each posts}}
+    <div class="card" style="width: 18rem;">
+        <h5 class="card-title" href="/post/{{id}}">{{creator.name}}</h5>
+        <img class="card-img-top" src="{{img}}" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">{{content}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}

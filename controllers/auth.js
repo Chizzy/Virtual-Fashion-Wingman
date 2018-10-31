@@ -10,13 +10,13 @@ const authController = {
         })
     },
     createUser: (req, res) => {
-        
+
         console.log(req.body)
         const signupStrategy = passport.authenticate('local-signup', {
             successRedirect: '/',
             failureRedirect: '/signup',
             failureFlash: true
-        }) 
+        })
         return signupStrategy(req, res)
     },
     logIn: (req, res) => {

@@ -24,7 +24,9 @@ const userController = {
         })
     },
     delete: (req, res) => {
-        res.send('Waz hannin from User delete!')
+        User.findByIdAndRemove(req.params.id).then(() => {
+            res.redirect('/')
+        })
     }
 }
 

@@ -25,7 +25,7 @@ router.put('/user/:id', userController.update)
 router.patch('/user/:id', userController.update)
 router.delete('/user/:id', userController.delete)
 
-router.get('/user/:id/posts', postController.index)
+router.get('/posts', postController.index)
 router.get('/user/:id/posts/new', postController.new)
 router.get('/user/:id/posts/:id', postController.show)
 router.post('/user/:id/posts',  postController.create)

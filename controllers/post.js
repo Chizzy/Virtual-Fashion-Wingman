@@ -3,7 +3,9 @@ const Post = require('../models/Post')
 
 const postController = {
     index: (req, res) => {
-        res.send('Waz hannin from Post index!')
+        Post.find().populate('creator').then((posts) => {
+            res.render('post/index', {posts: posts})
+        })
     },
     new: (req, res) => {
         res.send('Waz hannin from Post new!')
