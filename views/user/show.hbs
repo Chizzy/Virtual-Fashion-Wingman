@@ -37,6 +37,7 @@
         <div class="row">
             <div class="col-md-4">
 
+                <div id="arrange-cards"></div>
                 {{#if user.posts}}
                 {{#each user.posts}}
                 <div class="card" style="width: 18rem;">
@@ -62,12 +63,13 @@
                 </div>
                 {{/each}}
                 {{/if}}
-
             </div>
-        </div>
-    </form>
 
-    <form action="/user/{{user._id}}?_method=DELETE" method="POST">
-        <button class="btn btn-outline-danger" type="submit">DELETE PROFILE</button>
-    </form>
+        </div>
+</div>
+</form>
+
+<form action="/user/{{user._id}}?_method=DELETE" method="POST">
+    <button class="btn btn-outline-danger" type="submit">DELETE PROFILE</button>
+</form>
 </div>

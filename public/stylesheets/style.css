@@ -129,3 +129,8 @@ a {
   font-weight: 600;
   color: pink;
 }
+
+#arrange-cards {
+  display: flex;
+  flex-direction: column-reverse;
+}
