@@ -78,13 +78,13 @@ a {
   cursor: pointer;
   font-family: 'Capriola', sans-serif;
 }
-.proile-rating {
+.profile-rating {
   font-size: 20px;
   color: #818182;
   margin-top: 5%;
   font-family: 'Capriola', sans-serif;
 }
-.proile-rating span {
+.profile-rating span {
   color: #495057;
   font-size: 30px;
   font-weight: 600;
@@ -130,7 +130,11 @@ a {
   color: pink;
 }
 
-#arrange-cards {
+.arrange-cards {
   display: flex;
-  flex-direction: column-reverse;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }

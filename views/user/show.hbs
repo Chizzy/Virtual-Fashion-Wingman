@@ -16,7 +16,7 @@
                     </h6>
 
                     {{#if currentUser.feedbacks}}
-                    <p class="proile-rating">Location: <span>{{currentUser.location}}</span></p>
+                    <p class="profile-rating">Location: <span>{{currentUser.location}}</span></p>
                     <ul class="nav profile-about">
                         <li class="nav-item">
                             About
@@ -37,15 +37,17 @@
         <div class="row">
             <div class="col-md-4">
 
-                <div id="arrange-cards"></div>
+
                 {{#if user.posts}}
                 {{#each user.posts}}
-                <div class="card" style="width: 18rem;">
-                    <h5 class="card-title"><a href="/posts/{{id}}">Post</a></h5>
-                    <img class="card-img-top" src="{{img}}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{content}}</p>
-                        <a href="/posts/{{id}}/edit" class="btn btn-secondary">Edit</a>
+                <div class="arrange-cards">
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="card-title"><a href="/posts/{{id}}">Post</a></h5>
+                        <img class="card-img-top" src="{{img}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">{{content}}</p>
+                            <a href="/posts/{{id}}/edit" class="btn btn-secondary">Edit</a>
+                        </div>
                     </div>
                 </div>
                 {{/each}}
@@ -54,15 +56,18 @@
 
                 {{#if user.feedbacks}}
                 {{#each user.feedbacks}}
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title" href="/feedback/{{id}}">Feedback</h5>
-                        <p class="card-text text-justify">{{comment}}</p>
-                        <a href="#" class="btn btn-primary">Edit</a>
+                <div class="arrange-cards">
+                    <div class="card w-75">
+                        <div class="card-body">
+                            <h5 class="card-title" href="/feedback/{{id}}">Feedback</h5>
+                            <p class="card-text text-justify">{{comment}}</p>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                        </div>
                     </div>
                 </div>
                 {{/each}}
                 {{/if}}
+
             </div>
 
         </div>
